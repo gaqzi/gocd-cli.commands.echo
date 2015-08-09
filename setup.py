@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
+import os
 import sys
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
@@ -25,22 +26,22 @@ class PyTest(TestCommand):
 
 
 def version():
-    import gocd
-    return gocd.__version__
+    from gocd_cli.commands import echo
+    return echo.__version__
 
+README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(
-    name='gocd_cli.commands.echo',
+    name='gocd-cli.commands.echo',
     author='Björn Andersson',
     author_email='ba@sanitarium.se',
     license='MIT License',
+    description='An example echo command',
+    long_description=README,
     version=version(),
     packages=find_packages(exclude=('tests',)),
     cmdclass={'test': PyTest},
     install_requires=[
-        'gocd_cli',
-    ],
-    tests_require=[
-        'pytest',
+        'gocd-cli>=0.7,<1.0',
     ],
 )

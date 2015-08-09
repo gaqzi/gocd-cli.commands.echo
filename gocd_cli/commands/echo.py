@@ -2,6 +2,7 @@ from __future__ import print_function
 from gocd_cli.command import BaseCommand
 
 __all__ = ['Echo']
+__version__ = '1.0'
 
 
 class Echo(BaseCommand):
