@@ -14,4 +14,4 @@ Install the command from PyPi and then call it:
     $ gocd echo echo "Well HELLO there"
     Well HELLO there
 
-.. _gocd-cli: https://github.com/gaqzi/py-gocd-cli/
+.. _gocd-cli: https://github.com/gaqzi/gocd-cli/
